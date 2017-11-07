@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- bocolor为背景色（十六进制），bgimg为背景图片地址（没用就用none） -->
+<drawpie bgcolor="0xffffff" bgimg="none">
+  <pie>
+    <!-- pie名：字符串 -->
+    <pie_mcname>kiss</pie_mcname>
+    <!-- pie深度 -->
+    <pie_depth>2</pie_depth>
+    <!-- 标题 -->
+    <pie_title>
+    </pie_title>
+    <!-- 竖向列标支持动作:onRelease,onRollOver,onRollOut,none -->
+    <pie_action>onRelease</pie_action>
+    <!-- 数值 -->
+    <pie_num>29.20,27.20</pie_num>
+    <pie_name>安装   购买金额：29.20    购买量：4,曲阳大酒店   购买金额：27.20    购买量：3</pie_name>
+    <!-- 颜色：字符串（十六进制颜色名）。每一个项目颜色用“,”隔开 -->
+    <pie_color>0xFF0F00,0xFF6600,0xFF9E01,0xFCD202,0xF8FF01,0xB0DE09,0x04D215,0x0D8ECF,0xFF1F11,0xFE5200</pie_color>
+    <!-- 是否显示名称与数值 -->
+    <pie_showtitle>true,true,true,true,true,true,true,true,true,true</pie_showtitle>
+    <!-- 默认pie位置是否打开 -->
+    <pie_defaultsate>false,false,false,false,false,false,false,false,false,false</pie_defaultsate>
+    <!-- 深色系数 -->
+    <pie_dark>1.15</pie_dark>
+    <!-- 圆心x坐标 -->
+    <pie_x0>380</pie_x0>
+    <!-- 圆心y坐标 -->
+    <pie_y0>140</pie_y0>
+    <!-- 长轴 -->
+    <pie_z>160</pie_z>
+    <!-- 短轴 -->
+    <pie_d>100</pie_d>
+    <!-- 环宽 -->
+    <pie_w>140</pie_w>
+    <!-- 高 -->
+    <pie_h>10</pie_h>
+    <!-- 移动距离 -->
+    <pie_move>15</pie_move>
+    <!-- 点击之后的pie透明度 -->
+    <pie_clickalpha>50</pie_clickalpha>
+    <!-- 默认透明度 -->
+    <pie_defaultalpha>100</pie_defaultalpha>
+    <!-- 是否显示竖向列标 -->
+    <pie_showorder>true</pie_showorder>
+    <!-- 竖向列标x坐标 -->
+    <pie_orderx>160</pie_orderx>
+    <!-- 竖向列标y坐标 -->
+    <pie_ordery>290</pie_ordery>
+    <!-- 竖向列标间隔 -->
+    <pie_orderxy>3</pie_orderxy>
+    <!-- 竖向列标文字颜色 -->
+    <pie_orderfontcolor>0x000000</pie_orderfontcolor>
+    <!-- 指示线颜色 -->
+    <pie_linecolor>0xcccccc</pie_linecolor>
+    <!-- 指示线透明度 -->
+    <pie_linealpha>100</pie_linealpha>
+    <!-- 指示线长度 -->
+    <pie_linewidth>20</pie_linewidth>
+    <!-- 文字颜色 -->
+    <pie_fontcolor>0xFF0000</pie_fontcolor>
+    <!--是否显示百分数值等（all,num,font,none）-->
+    <pie_percentshow>num</pie_percentshow>
+  </pie>
+</drawpie>
