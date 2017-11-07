@@ -30,3 +30,6 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
+
+DB/PS_DB_Data.MDF
+DB/PS_DB_Log.LDF

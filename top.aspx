@@ -36,10 +36,10 @@
         
     <ul class="nav">
     <li><a href="home.aspx" target="rightFrame" class="selected"><img src="images/ico01.png" title="系统首页"  width="45" height="45"/><h2>系统首页</h2></a></li>
-    <li><a href="order/goods_list.aspx" target="rightFrame"><img src="images/8.png" title="订购商品" width="45" height="45"/><h2>订购商品</h2></a></li>
-    <li><a href="order/my_order.aspx"  target="rightFrame"><img src="images/1.png" title="我的订单" width="45" height="45"/><h2>我的订单</h2></a></li>
-	<li><a href="sysmanager/notice_list.aspx"  target="rightFrame"><img src="images/i09.png" title="通知公告" width="45" height="45"/><h2>通知公告</h2></a></li>
-	<li><a href="sysmanager/my_info.aspx"  target="rightFrame"><img src="images/i07.png" title="我的信息" width="45" height="45"/><h2>我的信息</h2></a></li>
+    <li><a href="order/goods_list.aspx" target="rightFrame"><img src="images/8.png" title="装备信息" width="45" height="45"/><h2>装备信息</h2></a></li>
+    <li><a href="order/my_order.aspx"  target="rightFrame"><img src="images/1.png" title="维护记录" width="45" height="45"/><h2>维护记录</h2></a></li>
+	<li><a href="sysmanager/notice_list.aspx"  target="rightFrame"><img src="images/i09.png" title="点检信息" width="45" height="45"/><h2>点检信息</h2></a></li>
+	<li><a href="sysmanager/my_info.aspx"  target="rightFrame"><img src="images/i07.png" title="点检记录" width="45" height="45"/><h2>点检记录</h2></a></li>
     </ul>
             
     <div class="topright">    
