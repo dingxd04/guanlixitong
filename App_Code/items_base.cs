@@ -21,12 +21,12 @@ public partial class items_base
     private string _manufacturer = "";
     private string _sub_department = "";
     private string _position = "";
-    private string _user = "";
+    private string _keeper = "";
     private string _remark = "";
     private DateTime? _last_test_time = DateTime.Now;
-    private int? _test_interval = 0;//user_id
+    private int? _test_interval = 0;
     private string _status_detail = "";
-    private int? _items_total = 0;//status
+    private int? _items_total = 0;
     private int? _items_using_num = 0;
     private int? _items_well_num = 0;
     private int? _items_repair_num = 0;
@@ -99,10 +99,10 @@ public partial class items_base
     /// <summary>
     /// 保管人
     /// </summary>
-    public string user
+    public string keeper
     {
-        set { _user = value; }
-        get { return _user; }
+        set { _keeper = value; }
+        get { return _keeper; }
     }
     /// <summary>
     /// 备注
@@ -185,10 +185,10 @@ public partial class items_base
     /// <summary>
     /// 得到最大ID
     /// </summary>
-    public int GetMaxId(int userid)
+    public int GetMaxId(int items_department_id)
     {
 
-        return DbHelperSQL.GetMaxID("id", "items_base where test_interval=" + userid);
+        return DbHelperSQL.GetMaxID("id", "items_base where items_department_id=" + items_department_id);
     }
     /// <summary>
     /// 是否存在该记录
@@ -302,9 +302,9 @@ public partial class items_base
     {
         StringBuilder strSql = new StringBuilder();
         strSql.Append("insert into [items_base] (");
-        strSql.Append("(items_department_id,items_name,items_url,items_type,manufacturer,sub_department,position,user,remark,last_test_time,test_interval,status_detail,items_total,items_using_num,items_well_num,items_repair_num,items_bad_num,is_xs)");
+        strSql.Append("(items_department_id,items_name,items_url,items_type,manufacturer,sub_department,position,keeper,remark,last_test_time,test_interval,status_detail,items_total,items_using_num,items_well_num,items_repair_num,items_bad_num,is_xs)");
         strSql.Append(" values (");
-        strSql.Append("@items_department_id,@items_name,@items_url,@items_type,@manufacturer,@sub_department,@position,@user,@remark,@last_test_time,@test_interval,@status_detail,@items_total,@items_using_num,@items_well_num,@items_repair_num,@items_bad_num,@is_xs)");
+        strSql.Append("@items_department_id,@items_name,@items_url,@items_type,@manufacturer,@sub_department,@position,@keeper,@remark,@last_test_time,@test_interval,@status_detail,@items_total,@items_using_num,@items_well_num,@items_repair_num,@items_bad_num,@is_xs)");
         strSql.Append(";select @@IDENTITY");
         SqlParameter[] parameters = {
 					new SqlParameter("@items_department_id", SqlDbType.Int,4),
@@ -314,7 +314,7 @@ public partial class items_base
            new SqlParameter("@manufacturer", SqlDbType.VarChar,100),
            new SqlParameter("@sub_department", SqlDbType.VarChar,50),
            new SqlParameter("@position", SqlDbType.VarChar,250),
-           new SqlParameter("@user", SqlDbType.VarChar,50),
+           new SqlParameter("@keeper", SqlDbType.VarChar,50),
            new SqlParameter("@remark", SqlDbType.NVarChar,500),
            new SqlParameter("@last_test_time", SqlDbType.DateTime),
            new SqlParameter("@test_interval", SqlDbType.Int,4),
@@ -332,7 +332,7 @@ public partial class items_base
         parameters[4].Value = manufacturer;
         parameters[5].Value = sub_department;
         parameters[6].Value = position;
-        parameters[7].Value = user;
+        parameters[7].Value = keeper;
         parameters[8].Value = remark;
         parameters[9].Value = last_test_time;
         parameters[10].Value = test_interval;
@@ -369,7 +369,7 @@ public partial class items_base
         strSql.Append("manufacturer=@manufacturer, ");
         strSql.Append("sub_department=@sub_department, ");
         strSql.Append("position=@position, ");
-        strSql.Append("user=@user, ");
+        strSql.Append("keeper=@keeper, ");
         strSql.Append("remark=@remark, ");
         strSql.Append("test_interval=@test_interval, ");
         strSql.Append("items_total=@items_total, ");
@@ -383,7 +383,7 @@ public partial class items_base
            new SqlParameter("@manufacturer", SqlDbType.VarChar,100),
            new SqlParameter("@sub_department", SqlDbType.VarChar,50),
            new SqlParameter("@position", SqlDbType.VarChar,250),
-           new SqlParameter("@user", SqlDbType.VarChar,50),
+           new SqlParameter("@keeper", SqlDbType.VarChar,50),
            new SqlParameter("@remark", SqlDbType.NVarChar,500),
            new SqlParameter("@test_interval", SqlDbType.Int,4),
            new SqlParameter("@items_total", SqlDbType.Int,4),
@@ -396,7 +396,7 @@ public partial class items_base
         parameters[4].Value = manufacturer;
         parameters[5].Value = sub_department;
         parameters[6].Value = position;
-        parameters[7].Value = user;
+        parameters[7].Value = keeper;
         parameters[8].Value = remark;
         parameters[9].Value = test_interval;
         parameters[10].Value = items_total;
@@ -444,7 +444,7 @@ public partial class items_base
     public void GetModel(long id)
     {
         StringBuilder strSql = new StringBuilder();
-        strSql.Append("(items_department_id,items_name,items_url,items_type,manufacturer,sub_department,position,user,remark,last_test_time,test_interval,status_detail,items_total,items_using_num,items_well_num,items_repair_num,items_bad_num,is_xs)");
+        strSql.Append("(items_department_id,items_name,items_url,items_type,manufacturer,sub_department,position,keeper,remark,last_test_time,test_interval,status_detail,items_total,items_using_num,items_well_num,items_repair_num,items_bad_num,is_xs)");
         strSql.Append(" FROM [items_base] ");
         strSql.Append(" where id=@id ");
         SqlParameter[] parameters = {
@@ -486,9 +486,9 @@ public partial class items_base
             {
                 this.position = ds.Tables[0].Rows[0]["position"].ToString();
             }
-            if (ds.Tables[0].Rows[0]["user"] != null)
+            if (ds.Tables[0].Rows[0]["keeper"] != null)
             {
-                this.user = ds.Tables[0].Rows[0]["user"].ToString();
+                this.keeper = ds.Tables[0].Rows[0]["keeper"].ToString();
             }
             if (ds.Tables[0].Rows[0]["remark"] != null)
             {
